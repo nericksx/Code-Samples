@@ -1,0 +1,73 @@
+<div class="variable">
+					<button value="good" class="good"><span>Good</span></button>
+					<button value="bad" class="bad"><span>Bad</span></button>
+					<button value="ugly" class="ugly"><span>Ugly</span></button>       
+</div>
+
+.border-box(@boxModel: border-box) {
+	box-sizing: @boxModel;
+	-moz-box-sizing: @boxModel;
+	-webkit-box-sizing: @boxModel; 
+}
+
+.roundedCorners(@radius)
+{
+	border-radius: @radius;
+	-webkit-border-raduis: @radius;
+	-moz-border-radius: @radius;
+}
+
+.scale(@size) {
+	@good: #769D2A;
+	@bad: #317895;
+	@ugly: #6A246D;
+
+	text-align: center;
+
+	button {
+		.border-box(content-box);
+		color: white;
+		font-weight: bold;
+		vertical-align: middle;
+		cursor: pointer;
+		.roundedCorners(50%);
+		display: inline-block;
+		width: @size;
+		height: @size;
+		padding: 0 !important;
+		position: relative;
+		border: 8px solid transparent;
+		margin: auto .25em;
+		&[disabled], .disabled {
+			color: #ccc;
+			background: #eee !important;
+			&:hover {border-color: transparent !important; }
+		}
+
+		&.good {
+			background: @good;
+		&:hover, &.selected {
+			background: lighten(@good, 10%);
+			border-color: lighten(@good, 30%);
+
+		} }
+
+		&.bad {
+			background: @bad;
+		&:hover, &.selected {
+			background: lighten(@bad, 10%);
+			border-color: lighten(@bad, 30%);
+		} }
+
+		&.ugly {
+			background: @ugly;
+		&:hover, &.selected {
+			background: lighten(@ugly, 10%);
+			border-color: lighten(@ugly, 30%);
+		} }
+	}
+}
+
+.variable {
+		.scale(3.75em);
+}
