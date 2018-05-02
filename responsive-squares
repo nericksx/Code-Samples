@@ -1,0 +1,114 @@
+<div>
+  <section class="content1">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  </section>
+  <section class="content2">
+    Nullam tincidunt, mauris ac pulvinar feugiat, orci nibh cursus nisi, non vulputate dolor magna ornare odio. Etiam eget euismod ipsum. Donec convallis sem vitae neque condimentum vel pharetra est feugiat.
+  </section>
+  <section class="content3">
+    Etiam eget euismod ipsum.
+  </section>
+  <section class="content4">
+    Etiam eget euismod ipsum. Donec convallis sem vitae neque condimentum vel pharetra est feugiat.
+  </section>
+</div>
+
+@columnWidth: 6.166666666666667%;
+@gutterWidth: 2%;
+#grid() {
+    .column(
+        @columnSpan: 1,
+        @columnOffset: 0
+        ) {
+        margin-left: (@columnWidth * @columnOffset) + (@gutterWidth * (@columnOffset - 1)) + (@gutterWidth * 2);
+        width: (@columnWidth * @columnSpan) + (@gutterWidth * (@columnSpan - 1));
+        float: left;
+        //clear: left;
+    }
+    .row() {
+      margin-left: @gutterWidth * -1;
+      //margin-right: @gutterWidth;
+      clear: both;
+    }
+}
+
+ //Do you need a responsive SQUARE tile? Then you need:
+ .gridSquare (
+     @columnSpan: 1, 
+     @columnOffset: 0, 
+     @buttonHeight: -2.75em 
+     ) {  
+	   #grid > .column(@columnSpan);
+	   overflow: hidden;
+	   //min-width: 15.5em;
+	   position: relative;
+	   height: 0;
+	   padding-bottom: (@columnWidth * @columnSpan) + (@gutterWidth * (@columnSpan - 1));
+	   margin-bottom: @gutterWidth;
+	   background-repeat: no-repeat;
+	   -webkit-background-size:cover;
+	   -moz-background-size:cover;
+	   background-size:cover;
+	   background-position: 50% 50%;
+}
+
+ //Do you need your square tiles to go back to being having their height defined by their content (like for a mobile phone)?
+ //Then you need:
+ .gridContent(@colSpan: 12) { //reverses the square styling
+     #grid .column(@colSpan);
+	   margin-bottom: 4%;
+	   height: auto;
+	   padding-bottom: 4%;
+}
+
+div {
+  width: 70%;
+}
+
+section {
+  .gridSquare(3);
+
+  &.content1 {
+     background-color: red;
+  }
+  
+  &.content2 {
+    background-color: purple;
+  }
+  
+  &.content3 {
+    background-color: green;
+  }
+  
+  &.content4 {
+    background-color: yellow;
+  }
+}
+
+/*
+	Device Resolution (portrait):
+					w 		h
+		iPad  		768 x 	1024
+		iPhone 4  	320 x 	480
+		iPhone 5  	320 x 	568
+		Nexus 7 	800 x 	1280
+		Kindle Fire	600 x 	1024
+*/
+
+@tabletPortrait: 800px;
+@phones: 480px;
+
+
+
+@media screen and (max-width: @tabletPortrait) {
+  section {
+    .gridSquare(6);
+  }
+}
+
+@media screen and (max-width: @phones) {
+  div {width: 90%;}
+  section {
+    .gridContent(12);
+  }
+}
