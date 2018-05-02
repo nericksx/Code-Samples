@@ -1,0 +1,88 @@
+See it in action: https://codepen.io/nericksx/pen/KpPKZZ
+
+<div class="slider">
+  <input type="radio" name="test" id="thing" />
+  <label for="thing">Thing<label for="thing"></label></label>
+  <input type="radio" name="test" id="oThing" />
+  <label for="oThing">Other Thing<label for="oThing"></labeL></label>
+  <input type="radio" name="test" id="omThing" />
+  <label for="omThing">One More Thing<label for="omThing"></labeL></label>
+  <input type="radio" name="test" id="aThing" />
+  <label for="aThing">Another Thing<label for="aThing"></labeL></label>
+  <input type="radio" name="test" id="alThing" />
+  <label for="alThing">A Last Thing<label for="alThing"></labeL></label>
+</div>
+
+@import "compass/css3";
+
+$accent3: 	#00bbee; // bright blue
+$linkColor:			$accent3;
+$lightContrast:		#ffffff; // white
+
+@mixin hideInput {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    top: 50%;
+}
+
+@mixin radioSlider {
+  @include hideInput;
+  & + label {  //makes the text label
+    margin: 0;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #fff;
+    width: 10em;
+    display: inline-block;
+    text-align: center;
+    padding-bottom: .75em;
+    &:hover { border: 1px solid lightgray; }    
+    &::after {  //makes the tick-mark
+      content: "|";
+      color: #aaa;
+      display: block;
+    }
+  }
+    
+  &:checked + label label {   
+ //makes the slider graphic
+    display: block;
+    position: absolute;
+    left: calc(50% - 6px); //middle minus half the width of the graphic
+    bottom: -1em;
+    width: 12px;
+    border-width: 20px 0 0; //rectangle height
+    border-style: solid;
+    border-color: red transparent;
+    &::before { //top triangle
+      content: "";
+      position: absolute;
+      height: 0;
+      width: 0;
+      bottom: 20px; //sets the triangle on the rectangle
+      left: 0;
+      border-width: 0 6px 6px; //width and height of triangle
+      border-style: solid;
+      border-color: transparent transparent red;
+    }
+  }
+}
+
+.slider { //slider container
+  display: inline-block;
+  margin-top: 1em;
+  position: relative;
+  
+  &::after { //the "bar" itself - below the container proper
+    content: " ";
+    background-color: #ccc;
+    height: .5em;
+    width: 100%;
+    display: block;
+    @include border-radius(7px);
+  }
+}
+
+input { @include radioSlider; }
