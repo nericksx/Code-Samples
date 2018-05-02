@@ -1,7 +1,9 @@
+See it in action: https://codepen.io/nericksx/pen/srBJe
+
 <div class="variable">
-					<button value="good" class="good"><span>Good</span></button>
-					<button value="bad" class="bad"><span>Bad</span></button>
-					<button value="ugly" class="ugly"><span>Ugly</span></button>       
+	<button value="good" class="good"><span>Good</span></button>
+	<button value="bad" class="bad"><span>Bad</span></button>
+	<button value="ugly" class="ugly"><span>Ugly</span></button>       
 </div>
 
 .border-box(@boxModel: border-box) {
