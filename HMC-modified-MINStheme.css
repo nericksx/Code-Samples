@@ -1,0 +1,236 @@
+/*
+You can add your own CSS here.
+
+Click the help icon above to learn more.
+*/
+
+/* CUSTOM */
+/*body, h1, h2, h3, h4, h5, h6, p, ol li, ul li, dl dd, .fl-callout-text {
+    font-family: 'Montserrat', sans-serif;
+}*/
+
+.site-title-wrapper {
+	display: flex;
+    align-items: center;
+	justify-content: space-between;
+}
+
+.site-title-wrapper a { display: block; }
+
+.primer-hero-text-widget {
+	padding: 0;
+	margin: 0;
+}
+
+.hero .hero-inner { 
+	width: 100%; 
+	padding: 0;
+    padding-right: calc((100% - 1100px) / 2);   
+}
+
+.hero {
+	background-position: center center;
+}
+
+.home .hero {
+	background-position: center bottom;
+}
+
+#main img { max-width: 100%; } 
+
+#main .home-content-block div {
+	display: flex;
+	align-items: center;
+}
+
+@media screen and (max-width: 40.63em) {
+	.primer-hero-text-widget {
+    	padding: 0;
+    	margin: 0 1em;
+		transition: margin .5s ease;
+	}
+
+	#main img {
+		width: 90%;
+		min-width: 90%;
+		transition: width .5s ease; 
+	} 
+
+	article div h3 { 
+		font-size: 1.5rem;
+	}
+	
+	p { font-size: 1rem; }
+
+	.hero h2 { font-size: 2rem; } 
+
+	.hero .widget.widget_text p { font-size: 1.2rem; }
+	
+	#masthead {
+		min-width: 300px;
+	}
+
+	.site-title-wrapper {
+		float: left;
+	}	
+	
+	.page-content .portfolio-logo {
+		width: 100% !important;
+	}
+
+	.page-content .portfolio-logo img {    				margin: 0 auto;
+    display: block;
+	}
+}
+
+article:nth-child(even) div h3 { text-align: right;
+	}
+
+#main article div .home-content-block img + p { display: none; }
+
+#main article div .home-content-block:nth-child(n+2) { margin-top: 1em; }
+
+#main article div .home-content-block h3
+{ margin-top: 0; }
+
+#main article div .home-content-block .learn-more { display: block; }
+
+#main article div .home-content-block:nth-child(odd) img { margin: .5em 1em 0 0; }
+
+#main article div .home-content-block:nth-child(even) img {
+	margin: .5em 0 0 1em;
+	order: 2;
+}
+
+#main a br { display: none; }
+
+.learn-more {
+	display: block;
+	background: 		url("https://hmcinspire.com/wp-content/uploads/2017/08/Homewhitebutton-green.png") no-repeat right;
+	background-size: contain;
+	width: 137px;
+}
+
+.learn-more#connect { width: 158px; }
+
+.hero { min-width: 250px; }
+
+.home .hero .widget {
+	margin: 1em 5em;
+    max-width: 430px;
+    float: right; 
+
+}
+
+.home .hero h2 { font-size: 2rem; }
+
+@media screen and (max-width: 900px) { 
+	.home .hero .hero-inner {   				
+		/*width: 85%;
+    	margin: 0 auto;*/
+		transition: width .5s ease;
+	}
+
+	.page-content .portfolio-logo {
+		width: 33%;
+	}
+}
+
+.page-header .page-title {
+	margin: 1em .35em;
+}
+
+.hero .hero-inner .page-header h1 {
+	font-size: 250%; 
+	text-align: right;
+}
+
+#primary #main .page-content h3 { 
+	text-transform: none; 
+	margin-left: -2px; 
+	margin-top: 0;   
+}
+
+#primary #main .page-content h6 { font-size: 1em; }
+
+#primary #main .page-content .details {
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+.post-160 .page-content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: space-around;
+}
+
+.page-id-374 .hero,
+.parent-pageid-374 .hero {  }
+
+.page-id-372 .hero,
+.parent-pageid-372 .hero { background-position-y: -320px; }
+
+.page-id-370 .hero,
+.parent-pageid-370 .hero { background-position-y: -280px; }
+
+/*.page-id-158 p { margin: 0 0 30px 2rem; }*/
+
+.portfolio-logo {
+	width: 20%;
+	flex-basis: auto;
+}
+
+.portfolio-logo.testimonial {
+	width: 100%;
+	margin-left: 2.5rem;
+	margin-right: 2.5rem;
+}
+
+.portfolio-logo.testimonial.long-text .continued {
+	line-height: 1rem;
+    margin-top: -1rem;
+}
+
+.portfolio-logo.testimonial.long-text .continued a:after { 	
+     content: "See Less...";
+}
+
+.portfolio-logo.testimonial.long-text .details.closed {
+	max-height: 98px;
+	overflow: hidden;
+}
+
+.portfolio-logo.testimonial.long-text .details.closed + .continued a:after { 	
+     content: "Continued...";
+}
+
+.portfolio-logo.testimonial span {
+	display: block;
+	margin-top: .5rem;   
+}
+
+.portfolio-logo.testimonial p:not(.details) { display: none; }
+
+.portfolio-logo.testimonial img { 
+	float: left;
+	margin: 0 1rem 1rem 0; 
+}
+
+#main .portfolio-logo img { 
+	max-width: 100%;
+	min-width: 100px;
+}
+
+.nf-field-container, 
+.nf-field-container.textbox-container.label-above, 
+#ninja_forms_required_items {
+	margin-bottom: .75rem;
+}
+
+.nf-before-form-content {
+	margin: -.5rem 0 .5rem 0;
+}
+
+.nf-form-content { font-size: .75rem; }
